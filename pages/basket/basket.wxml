@@ -1,0 +1,12 @@
+<view class="page">
+  <nav-bar />
+  <view wx:if="{{empty}}" class="empty">餐桌暂无菜品，材料清单会在点菜后自动生成</view>
+  <view wx:else class="hint">以下为餐桌菜品所需材料（按「份」汇总），并标注来源菜品</view>
+  <view wx:for="{{items}}" wx:key="name" class="card">
+    <view class="row-top">
+      <text class="name">{{item.name}}</text>
+      <text class="count">{{item.count}} 份</text>
+    </view>
+    <view class="sources">来自：{{item.sourceText}}</view>
+  </view>
+</view>

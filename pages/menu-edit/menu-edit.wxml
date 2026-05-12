@@ -1,0 +1,53 @@
+<view class="page">
+  <nav-bar show-back="{{true}}" back-label="返回菜单" back-switch-tab-url="/pages/menu/menu" />
+  <scroll-view class="scroll" scroll-y enhanced show-scrollbar="{{false}}">
+    <block wx:for="{{sections}}" wx:key="category" wx:for-item="sec">
+      <view class="sec-title">{{sec.category}}</view>
+      <view wx:for="{{sec.list}}" wx:key="id" wx:for-item="dish" class="row">
+        <view class="row-text">
+          <text class="dish-name">{{dish.name}}</text>
+          <text class="dish-ing" wx:if="{{dish.ingredients && dish.ingredients.length}}">
+            {{dish.ingredients.join('、')}}
+          </text>
+        </view>
+        <button class="btn-del" size="mini" type="warn" data-id="{{dish.id}}" bindtap="onDelete">删除</button>
+      </view>
+    </block>
+    <view wx:if="{{!sections.length}}" class="empty">暂无菜品，点击下方新增</view>
+    <view class="bottom-spacer" />
+  </scroll-view>
+
+  <view class="footer safe-bottom">
+    <button class="btn-primary" type="primary" bindtap="toggleForm">{{formOpen ? '收起表单' : '新增菜品'}}</button>
+  </view>
+
+  <view wx:if="{{formOpen}}" class="sheet-root">
+    <view class="sheet-mask" bindtap="toggleForm" />
+    <view class="sheet-inner">
+      <view class="field">
+        <text class="label">菜品类别</text>
+        <picker mode="selector" range="{{categoryOptions}}" value="{{categoryIndex}}" bindchange="onCategoryPick">
+          <view class="picker-val">{{categoryOptions[categoryIndex]}}</view>
+        </picker>
+      </view>
+      <view wx:if="{{categoryOptions[categoryIndex] === '— 新建类别 —'}}" class="field">
+        <text class="label">新类别名称</text>
+        <input class="input" placeholder="输入新类别" value="{{newCategory}}" bindinput="onNewCategoryInput" />
+      </view>
+      <view class="field">
+        <text class="label">菜品名称</text>
+        <input class="input" placeholder="如：鱼香肉丝" value="{{dishName}}" bindinput="onNameInput" />
+      </view>
+      <view class="field">
+        <text class="label">所需材料</text>
+        <input
+          class="input"
+          placeholder="多个用逗号分隔，如：猪肉,青椒,蒜"
+          value="{{ingredientsText}}"
+          bindinput="onIngredientsInput"
+        />
+      </view>
+      <button class="btn-confirm" type="primary" bindtap="onSaveNew">确认</button>
+    </view>
+  </view>
+</view>

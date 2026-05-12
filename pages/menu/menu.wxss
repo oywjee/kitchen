@@ -1,0 +1,94 @@
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.col-left {
+  width: 200rpx;
+  background: #fff;
+  border-right: 1rpx solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.left-scroll {
+  flex: 1;
+  height: 0;
+}
+
+.col-right {
+  flex: 1;
+  background: #f7f7f7;
+  height: 100%;
+}
+
+.cat-item {
+  padding: 28rpx 16rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  border-left: 6rpx solid transparent;
+}
+
+.cat-item--active {
+  background: #f0f9f4;
+  color: #07c160;
+  font-weight: 600;
+  border-left-color: #07c160;
+}
+
+.cat-add {
+  flex-shrink: 0;
+  padding: 24rpx 12rpx;
+  padding-bottom: calc(24rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  text-align: center;
+  font-size: 26rpx;
+  color: #576b95;
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  line-height: 1.35;
+}
+
+.dish-cell {
+  margin: 16rpx 24rpx;
+  padding: 20rpx 24rpx 20rpx 28rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+}
+
+.dish-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 30rpx;
+  color: #111;
+}
+
+.btn-add {
+  flex-shrink: 0;
+  margin: 0;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+  font-size: 24rpx;
+  line-height: 2;
+}
+
+.empty {
+  padding: 80rpx 32rpx;
+  text-align: center;
+  color: #888;
+  font-size: 28rpx;
+}

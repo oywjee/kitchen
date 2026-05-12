@@ -1,0 +1,12 @@
+<view class="page">
+  <nav-bar />
+  <view class="card">
+    <view class="title">绑定邮箱</view>
+    <view class="desc">用于密码找回与安全通知。绑定前部分功能将反复提示本页。</view>
+    <view class="field">
+      <text class="label">邮箱</text>
+      <input class="input" type="text" placeholder="name@example.com" value="{{email}}" bindinput="onEmailInput" />
+    </view>
+    <button class="btn" type="primary" bindtap="onSubmit">确认绑定</button>
+  </view>
+</view>

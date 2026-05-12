@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/menu/menu",
+    "pages/table/table",
+    "pages/basket/basket",
+    "pages/profile/profile",
+    "pages/menu-edit/menu-edit",
+    "pages/register/register",
+    "pages/bind-email/bind-email",
+    "pages/forgot-password/forgot-password"
+  ],
+  "window": {
+    "navigationBarTitleText": "暴富厨房",
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#ededed",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f7f7"
+  },
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar"
+  },
+  "tabBar": {
+    "color": "#7a7e83",
+    "selectedColor": "#07c160",
+    "backgroundColor": "#f7f7f7",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "菜单",
+        "iconPath": "images/tab.png",
+        "selectedIconPath": "images/tab-active.png"
+      },
+      {
+        "pagePath": "pages/table/table",
+        "text": "餐桌",
+        "iconPath": "images/tab.png",
+        "selectedIconPath": "images/tab-active.png"
+      },
+      {
+        "pagePath": "pages/basket/basket",
+        "text": "菜篮",
+        "iconPath": "images/tab.png",
+        "selectedIconPath": "images/tab-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tab.png",
+        "selectedIconPath": "images/tab-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "cloud": true,
+  "lazyCodeLoading": "requiredComponents"
+}

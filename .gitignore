@@ -1,0 +1,2 @@
+# Local WeChat DevTools overrides (contains appid and machine-specific settings)
+project.private.config.json

@@ -1,0 +1,15 @@
+<view
+  class="nav-root"
+  style="padding-top: {{statusBarHeight}}px; background-color: {{bgColor}};"
+>
+  <view
+    class="nav-bar"
+    style="height: {{navBarHeight}}px; padding-left: {{padSide}}px; padding-right: {{padSide}}px;"
+  >
+    <view wx:if="{{showBack}}" class="nav-back" bindtap="onBackTap">{{backLabel}}</view>
+    <view class="nav-title-wrap">
+      <image class="nav-icon" src="/images/rich.jpg" mode="aspectFit" />
+      <text class="nav-title">{{title}}</text>
+    </view>
+  </view>
+</view>

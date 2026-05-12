@@ -1,0 +1,52 @@
+<view class="page">
+  <nav-bar />
+  <block wx:if="{{!loggedIn}}">
+    <view class="card">
+      <view class="title">账号登录</view>
+      <view class="field">
+        <text class="label">用户名</text>
+        <input class="input" placeholder="请输入用户名" value="{{username}}" bindinput="onUsernameInput" />
+      </view>
+      <view class="field">
+        <text class="label">密码</text>
+        <input
+          class="input"
+          type="text"
+          password="{{true}}"
+          password-type="string"
+          placeholder="请输入密码"
+          value="{{password}}"
+          bindinput="onPasswordInput"
+        />
+      </view>
+      <button class="btn" type="primary" bindtap="onLogin">登录</button>
+      <view
+        class="link link-btn"
+        hover-class="link-btn--pressed"
+        hover-stay-time="100"
+        bindtap="goRegister"
+      >
+        注册账号
+      </view>
+      <view
+        class="link link-sub link-btn link-btn--outline"
+        hover-class="link-btn--pressed"
+        hover-stay-time="100"
+        bindtap="goForgot"
+      >
+        忘记密码
+      </view>
+    </view>
+    <view class="tip">未登录时餐桌仅保存在本机；登录后可按账号同步餐桌。</view>
+  </block>
+
+  <block wx:else>
+    <view class="user-card">
+      <view class="avatar">👤</view>
+      <text class="uname">{{username}}</text>
+      <text wx:if="{{userEmail}}" class="email">邮箱：{{userEmail}}</text>
+      <button wx:else class="btn-bind" type="primary" size="mini" bindtap="goBindEmail">补绑邮箱</button>
+      <button class="btn-out" type="default" bindtap="onLogout">退出登录</button>
+    </view>
+  </block>
+</view>

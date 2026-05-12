@@ -1,0 +1,9 @@
+{
+  "name": "echo",
+  "version": "1.0.0",
+  "description": "占位云函数，用于开通云开发后的部署验证",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~3.0.1"
+  }
+}

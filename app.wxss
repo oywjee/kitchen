@@ -1,0 +1,11 @@
+page {
+  background-color: #f7f7f7;
+  color: #111;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}

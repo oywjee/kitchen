@@ -1,0 +1,38 @@
+<view class="page">
+  <nav-bar show-back="{{true}}" back-label="返回登录" />
+  <view class="card">
+    <view class="field">
+      <text class="label">用户名</text>
+      <input class="input" placeholder="设置用户名" value="{{username}}" bindinput="onUsernameInput" />
+    </view>
+    <view class="field">
+      <text class="label">邮箱</text>
+      <input class="input" type="text" placeholder="用于密码找回，如 name@qq.com" value="{{email}}" bindinput="onEmailInput" />
+    </view>
+    <view class="field">
+      <text class="label">密码</text>
+      <input
+        class="input"
+        type="text"
+        password="{{true}}"
+        password-type="string"
+        placeholder="设置密码"
+        value="{{password}}"
+        bindinput="onPasswordInput"
+      />
+    </view>
+    <view class="field">
+      <text class="label">确认密码</text>
+      <input
+        class="input"
+        type="text"
+        password="{{true}}"
+        password-type="string"
+        placeholder="再次输入密码"
+        value="{{password2}}"
+        bindinput="onPassword2Input"
+      />
+    </view>
+    <button class="btn" type="primary" bindtap="onSubmit">注册并登录</button>
+  </view>
+</view>

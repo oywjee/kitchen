@@ -1,0 +1,34 @@
+<view class="page">
+  <nav-bar />
+  <view class="layout">
+    <view class="col-left">
+      <scroll-view class="left-scroll" scroll-y enhanced show-scrollbar="{{false}}">
+        <view
+          wx:for="{{categories}}"
+          wx:key="*this"
+          class="cat-item {{selectedCategory === item ? 'cat-item--active' : ''}}"
+          data-category="{{item}}"
+          bindtap="onSelectCategory"
+        >
+          {{item}}
+        </view>
+      </scroll-view>
+      <view wx:if="{{canEditMenu}}" class="cat-add safe-bottom" bindtap="goMenuEdit">调整菜单</view>
+    </view>
+    <scroll-view class="col-right" scroll-y enhanced show-scrollbar="{{false}}">
+      <view wx:if="{{!dishesInCategory.length}}" class="empty">该分类暂无菜品</view>
+      <view wx:for="{{dishesInCategory}}" wx:key="id" class="dish-cell">
+        <text class="dish-name">{{item.name}}</text>
+        <button
+          class="btn-add"
+          size="mini"
+          type="primary"
+          data-id="{{item.id}}"
+          catchtap="onAddDishToTable"
+        >
+          添加
+        </button>
+      </view>
+    </scroll-view>
+  </view>
+</view>
